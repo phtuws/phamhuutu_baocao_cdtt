@@ -84,7 +84,7 @@
                                         <input type="hidden" id="get_user_ls" value="{{ $user_ls }}">
                                     </li>
                                 @else
-                                <li class="infor-item heart-icon-box heart-far">
+                                    {{-- <li class="infor-item heart-icon-box heart-far">
                                     <a href="{{ route('temp.wishlist') }}">
                                         Xem sau<i class="fa-solid fa-heart fs-2"></i>
                                         <span class="badge fa-bounce" id="badge"></span>
@@ -97,23 +97,27 @@
                                             <div id="row_wishlist"></div>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="infor-item heart-far" style="margin-left: 50px;">
-                                    <a href="{{ route('site.cart') }}">Giỏ hàng<i class="fa-solid fa-cart-shopping fs-3 me-1"></i></a>
-                                </li>
-                                <li class="infor-item heart-far" style="margin-left: 50px;">
-                                    <a href="" data-bs-toggle="modal" data-bs-target="#myModal">Đăng nhập/Đăng ký</a>
-                                    <input type="hidden" id="get_user_ls" value="_temporary">
-                                    <div class="modal fade" id="myModal">
-                                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    @includeIf('frontend.modal-login')
+                                </li> --}}
+                                    <li class="infor-item heart-far" style="margin-left: 50px;">
+                                        <a href="{{ route('site.cart') }}">
+                                            <i class="fa-solid fa-cart-shopping fa-xs me-1"></i>
+                                        </a>
+                                    </li>
+                                    <li class="infor-item heart-far" style="margin-left: 50px;">
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                                            <i class="fa fa-user fa-xs"></i>
+                                        </a>
+                                        <input type="hidden" id="get_user_ls" value="_temporary">
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        @includeIf('frontend.modal-login')
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
                                 @endif
                             </ul>
                         </div>
@@ -161,15 +165,11 @@
                                         </ul>
                                     </li>
                                     <li class="infor-item heart-far">
-                                        <a href="{{ route('site.cart') }}">
-
-                                            Giỏ hàng<i class="fa-solid fa-cart-shopping fs-3 me-1">
-                                            </i>
-                                        </a>
-
+                                        <a href="{{ route('site.cart') }}"><i
+                                                class="fa-solid fa-cart-shopping fs-3 me-1"></i></a>
                                     </li>
                                     <li class="infor-item heart-far">
-                                        <a href="{{ route('site.myaccount') }}">Tài khoản<i
+                                        <a href="{{ route('site.myaccount') }}"><i
                                                 class="fa-solid fa-user fs-3"></i></a>
                                         @php
                                             $user_ls = Auth::guard('users')->user()->id;
@@ -177,36 +177,28 @@
                                         <input type="hidden" id="get_user_ls" value="{{ $user_ls }}">
                                     </li>
                                 @else
-                                    <li class="infor-item heart-icon-box heart-far">
-                                        <a href="{{ route('temp.wishlist') }}">
-                                            Yêu thích<i class="fa-solid fa-heart fs-2">
-
-                                            </i>
+                                    <li class="infor-item heart-icon-box heart-far" style="margin-left: 100px;">
+                                        <a href="{{ route('temp.wishlist') }}"><i
+                                                class="fa-solid fa-thumbs-up fa-xs"></i>
                                             <span class="badge fa-bounce" id="badge"></span>
                                         </a>
                                         <ul class="heart-sub">
                                             <li class="text-end text-decoration-underline fw-light">
-                                                <a href="{{ route('temp.wishlist') }}">Xem Yêu Thích</a>
+                                                <a href="{{ route('temp.wishlist') }}">Xem</a>
                                             </li>
                                             <li>
-                                                <div id="row_wishlist">
-
-                                                </div>
+                                                <div id="row_wishlist"></div>
                                             </li>
-
                                         </ul>
                                     </li>
-                                    <li class="infor-item heart-far">
-                                        <a href="{{ route('site.cart') }}">
-                                            Giỏ hàng<i class="fa-solid fa-cart-shopping fs-3 me-1">
-                                            </i>
+                                    <li class="infor-item heart-far" style="margin-left: 100px;">
+                                        <a href="{{ route('site.cart') }}"><i
+                                                class="fa-solid fa-cart-shopping fa-xs me-1"></i>
                                         </a>
-
                                     </li>
-                                    <li class="infor-item heart-far">
+                                    <<li class="infor-item heart-far" style="margin-left: 100px;">
                                         <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
-                                            Đăng nhập/Đăng ký
-                                        </a>
+                                            <i class="fa-solid fa-user fa-xs"></i></a>
                                         <input type="hidden" id="get_user_ls" value="_temporary">
                                         <div class="modal fade" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -217,7 +209,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                        </li>
                                 @endif
 
                             </ul>
